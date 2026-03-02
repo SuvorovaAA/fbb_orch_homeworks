@@ -2,7 +2,7 @@
 import argparse
 import json
 
-default_k = 4
+default_k = 2
 
 parser = argparse.ArgumentParser(
                     prog='count_kmers',
