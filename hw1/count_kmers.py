@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument('--fa', help='Input file in FASTA format', required=True)
 # Я зачем-то исходно написала с возможностью ввести имя файла и значение k,
-# поэтому конфликт вызывать будут вот эти две строки комментария
+# поэтому конфликт вызывать будут вот эти две строки комментария.
 parser.add_argument('-out', help='Output file name', default='cnts.json')
 parser.add_argument('-k', help=f'Value of k, default is {default_k}', default=default_k)
 
