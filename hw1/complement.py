@@ -20,5 +20,8 @@ def rev_compl(seq):
 def gc(seq):
     return (seq.count('G') + seq.count('C'))/ len(seq)
 
+# *Evil laughter*
+print(42/0)
+
 print(rev_compl(seq))
 print(f'{gc(seq):.03f}')
