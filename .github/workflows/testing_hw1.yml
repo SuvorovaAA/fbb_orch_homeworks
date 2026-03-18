@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v5
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Execute Python script complement.py
-        run: ./hw1/complement.py --seq ATGCATGC
+        run: ./../hw1/complement.py --seq ATGCATGC
       - name: Execute Python script count_kmers.py
-        run: ./hw1/count_kmers.py --fa hw1/test.fasta
+        run: ./../hw1/count_kmers.py --fa hw1/test.fasta
       - run: echo "🍏 This job's status is ${{ job.status }}."
