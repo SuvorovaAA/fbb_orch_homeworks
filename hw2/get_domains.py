@@ -96,11 +96,17 @@ for gene, ids in tqdm(results.items(), position=0, leave=True):
         if managed:
             data = response.json()
             time.sleep(0.5)
-            response = requests.get(data['entries_url'])
-            response.raise_for_status()
-            data = response.json()['results']
-            for res in data:
-                pfam_ids.add(res['metadata']['accession'])
+            for i in range(retries):
+                try:
+                    response = requests.get(data['entries_url'])
+                    response.raise_for_status()
+                    data = response.json()['results']
+                    for res in data:
+                        pfam_ids.add(res['metadata']['accession'])
+                    break
+                except:
+                    time.sleep(0.5)
+                print(f"Couldn't connect to {url}, tried {i + 1} times")
             time.sleep(0.5)
         domain_ids = set()
         for pfam_id in pfam_ids:
@@ -121,5 +127,7 @@ for gene, ids in tqdm(results.items(), position=0, leave=True):
             time.sleep(0.5)
     gene2domain[gene] = domain_ids
 
+data2write = {key: list(sorted(gene2domain[key])) for key in gene2domain}
+
 with open('domains.json', 'w') as outfile:
-    json.dump(gene2domain, outfile)
+    json.dump(data2write, outfile, indent=4)
