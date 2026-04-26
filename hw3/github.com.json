@@ -1,0 +1,54 @@
+{
+    "traceroute_steps": [
+        [
+            [
+                "Germany",
+                "Frankfurt",
+                "140.82.121.3"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Moscow",
+                "93.180.1.2"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Moscow",
+                "188.44.33.37"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Moscow",
+                "188.44.33.2"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Moscow",
+                "93.180.0.190"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Saint Petersburg",
+                "194.190.254.117"
+            ]
+        ],
+        [
+            [
+                "Russia",
+                "Moscow",
+                "62.231.31.101"
+            ]
+        ]
+    ],
+    "silent_hops": 23
+}
